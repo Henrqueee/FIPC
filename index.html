@@ -1,47 +1,72 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIPC</title>
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
+
 <body>
     <header>
-        <h1 class="title">FIPC</h1>
+        <h1 class="titulo">FIPC</h1>
         <nav>
-            <ul>
-                <li><a class="login-link" href="index.html">Login</a></li>
+            <ul class="lista-links">
+                <li><a class="link-login" href="login.html">Entrar</a></li>
+                <li><a class="link-login" href="register.html">Registrar</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <section class="first-section">
-            <div  class="card-register">
+        <section class="primeira-secao">
+            <div class="cartao-registro">
                 <h2>Pesquise a Tabela FIPE pela Placa</h2>
                 <p>Consulte a tabela Fipe de qualquer carro pela placa,
-                     não precisa do renavam, aceitamos placa Mercosul ou padrão brasileiro</p>
-                <a class="register"> Registrar-se </a>
+                    não precisa do renavam, aceitamos placa Mercosul ou padrão brasileiro</p>
+                <a class="botao-pesquisa" href="#consultar">Pesquisar</a>
             </div>
             <picture>
                 <img class="logo" src="imagens/logo.png" alt="Logo FIPC" title="Logo FIPC">
             </picture>
         </section>
-        <section class="second-section">
-                <h2 class="title-decoration-dark">Aproveite as consultas das Tabela FIPE</h2>
-                <ul class="list-advantages">
-                    <li><i class="fa-solid fa-star"></i> Consultas gratuitas, sem cadastro, sem limite de consultas</li>
-                    <li><i class="fa-solid fa-star"></i> Acesso online, sem instalar nada, basta acessar o site</li>
-                    <li><i class="fa-solid fa-star"></i> Consulte a tabela Fipe de qualquer carro, moto, caminhão</li>
-                    <li><i class="fa-solid fa-star"></i> Consulte qualquer carro pela placa, não precisa do renavam</li>
-                    <li><i class="fa-solid fa-star"></i> Acompanhe o valor do seu carro</li>
-                </ul>
-            </section>
-        <section class="third-section">
-            <h2 class="title-decoration-white">Tenha o histórico de consultas</h2>
+        <section class="segunda-secao">
+            <h2 class="titulo-decoracao-escura">Aproveite as consultas das Tabela FIPE</h2>
+            <ul class="lista-vantagens">
+                <li><i class="fa-solid fa-star"></i> Consultas gratuitas, sem cadastro, sem limite de consultas</li>
+                <li><i class="fa-solid fa-star"></i> Acesso online, sem instalar nada, basta acessar o site</li>
+                <li><i class="fa-solid fa-star"></i> Consulte a tabela Fipe de qualquer carro, moto, caminhão</li>
+                <li><i class="fa-solid fa-star"></i> Consulte qualquer carro pela placa, não precisa do renavam</li>
+                <li><i class="fa-solid fa-star"></i> Acompanhe o valor do seu carro</li>
+            </ul>
+        </section>
+        <section id="consultar" class="consulta">
+            <h2 class="titulo-decoracao-escura">Consultar Tabela FIPE</h2>
+            <div class="opcoes-selecao">
+                <input type="radio" id="carroRadio" name="tipoVeiculo" value="carros">
+                <label for="carroRadio">Carro</label>
+            
+                <input type="radio" id="motoRadio" name="tipoVeiculo" value="motos">
+                <label for="motoRadio">Moto</label>
+            
+                <input type="radio" id="caminhaoRadio" name="tipoVeiculo" value="caminhoes">
+                <label for="caminhaoRadio">Caminhão</label>
+            </div>
+        
+            <form  id="formSelecaoMarca" style="display:none;">
+                <div class="formulario-consulta">
+                <label for="marcaSelect">Selecione a Marca:</label>
+                <select name="marcaSelect" id="marcaSelect" required></select>
+                </div>
+
+            </form>
+        </section>
+        <section  class="terceira-secao">
+            <h2 class="titulo-decoracao-branca">Tenha o histórico de consultas</h2>
             <p>Acompanhe o histórico de consultas,
                 veja o valor do carro que você comprou, ou que você quer comprar.</p>
         </section>
+
     </main>
 
     <footer>
@@ -51,4 +76,5 @@
     <script src="assets/js/main.js"></script>
     <script src="https://kit.fontawesome.com/7084929e68.js" crossorigin="anonymous"></script>
 </body>
+
 </html>

@@ -6,13 +6,11 @@
 
 a {
     text-decoration: none;
-    
 }
 
 li {
     list-style: none;
 }
-
 
 body {
     font-family: Arial, sans-serif;
@@ -21,13 +19,21 @@ body {
     width: auto;
 }
 
-/*Estilos adicionais vão abaixo */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos adicionais vão abaixo */
 
 header {
     display: flex;
     justify-content: space-around;
     padding: 20px;
     background-color: #23272A;
+}
+
+.lista-links {
+    display: flex;
 }
 
 main {
@@ -37,28 +43,28 @@ main {
     align-items: center;
 }
 
-.title {
+.titulo {
     color: #ffff;
     text-decoration: underline;
 }
 
-.login-link {
+.link-login {
     display: inline-block;
     font-size: 25px;
     padding: 10px 20px;
-    color: #fff;   
+    color: #fff;
     text-decoration: none;
     transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
 }
 
-.login-link:hover {
-    color: #5865f2; 
-    border-color: #5865f2; 
+.link-login:hover {
+    color: #5865f2;
+    border-color: #5865f2;
 }
 
 /* Primeira seção página inicial */
 
-.first-section {
+.primeira-secao {
     background-color: #23272A;
     display: flex;
     justify-content: space-around;
@@ -67,7 +73,7 @@ main {
     flex-wrap: wrap;
 }
 
-.card-register {
+.cartao-registro {
     color: #ffff;
     display: flex;
     flex-direction: column;
@@ -75,23 +81,23 @@ main {
     justify-content: center;
 }
 
-.card-register h2 {
- font-size: 56px;
- padding-bottom: 25px;
+.cartao-registro h2 {
+    font-size: 56px;
+    padding-bottom: 25px;
 }
 
-.card-register p {
+.cartao-registro p {
     padding-bottom: 25px;
-   }
+}
 
 .logo {
     padding-top: 25%;
-    width: 80%; /* Define a largura da imagem como 80% do seu conteúdo */
-    height: auto; /* Mantém a proporção da imagem */
-    max-width: 100%; /* Define uma largura máxima para garantir que a imagem não ultrapasse o conteúdo */
+    width: 80%;
+    height: auto;
+    max-width: 100%;
 }
 
-.register {
+.botao-pesquisa {
     padding: 10px 20px;
     background-color: #5865f2;
     color: #fff;
@@ -101,10 +107,10 @@ main {
     font-size: 16px;
     text-align: center;
     text-decoration: none;
-    transition: background-color 0.3s ease; 
+    transition: background-color 0.3s ease;
 }
 
-.register:hover {
+.botao-pesquisa:hover {
     background-color: #fff;
     color: #5865f2;
     width: 110px;
@@ -112,8 +118,7 @@ main {
 
 /* Segunda seção página inicial */
 
-
-.second-section {
+.segunda-secao {
     max-width: 1260px;
     height: 400px;
     display: flex;
@@ -121,19 +126,34 @@ main {
     justify-content: center;
 }
 
-.title-decoration-dark {
+.titulo-decoracao-escura {
     font-size: 40px;
     color: #23272A;
 }
 
-.list-advantages {
+.lista-vantagens {
     padding: 15px 0;
     font-size: 20px;
 }
 
+/* Form consulta FIPE */
+
+.formulario-consulta {
+    display: flex;
+    flex-direction: column;
+}
+
+.consulta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
 /* Terceira seção página inicial */
 
-.third-section {
+.terceira-secao {
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -144,7 +164,7 @@ main {
     color: #fff;
 }
 
-.title-decoration-white {
+.titulo-decoracao-branca {
     color: #fff;
     font-size: 40px;
     padding-bottom: 15px;
