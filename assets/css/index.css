@@ -1,0 +1,201 @@
+/* Reset CSS */
+* {
+    margin: 0;
+    padding: 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Estilos adicionais vão abaixo */
+
+header {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+    background-color: #23272A;
+}
+
+.lista-links {
+    display: flex;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.titulo {
+    color: #ffff;
+    text-decoration: underline;
+}
+
+.link-login {
+    display: inline-block;
+    font-size: 25px;
+    padding: 10px 20px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid #fff;
+    margin: 0 7px
+}
+
+
+.link-login:hover {
+    color: #5865f2;
+    border-color: #5865f2;
+}
+
+/* Primeira seção página inicial */
+
+.primeira-secao {
+    background-color: #23272A;
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    height: 600px;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.cartao-registro {
+    color: #ffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.cartao-registro h2 {
+    font-size: 56px;
+    padding-bottom: 25px;
+}
+
+.cartao-registro p {
+    padding-bottom: 25px;
+}
+
+.logo {
+    width: 100%; /* Define a largura da imagem como 100% */
+    height: auto; /* Mantém a proporção da imagem */
+    display: block; /* Remove espaços indesejados abaixo da imagem */
+  }
+
+.botao-pesquisa {
+    display: flex;
+    width: 140px;
+    height: 40px;
+    background-color: #5865f2;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-size: 16px;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
+    color: #fff;
+}
+
+.botao-pesquisa:hover {
+    background-color: #fff;
+    color: #5865f2;
+    width: 170px;
+}
+
+/* Segunda seção página inicial */
+
+.segunda-secao {
+    max-width: 1260px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.titulo-decoracao-escura {
+    font-size: 40px;
+    color: #23272A;
+}
+
+.lista-vantagens {
+    padding: 15px 0;
+    font-size: 20px;
+}
+
+
+/* Terceira seção página inicial */
+
+.terceira-secao {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #23272A;
+    width: 100%;
+    height: 400px;
+    color: #fff;
+}
+
+.titulo-decoracao-branca {
+    color: #fff;
+    font-size: 40px;
+    padding-bottom: 15px;
+}
+
+footer {
+    background-color: #23272A;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+
+/* Form consulta FIPE */
+
+.formulario-consulta {
+    display: flex;
+    flex-direction: column;
+}
+
+.consulta {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+
+
+
+
+
+
+/* Media Query */
+
+@media (max-width: 768px) {
+    .logo {
+      width: 70%; /* Define a largura da imagem como 50% em dispositivos com largura máxima de 768px */
+      display: block; /* Remove espaços indesejados abaixo da imagem */
+      margin: 0 auto;
+    }
+  }
+  

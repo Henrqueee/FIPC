@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>FIPC</title>
-    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/index.css">
 </head>
 
 <body>
@@ -24,7 +24,7 @@
                 <h2>Pesquise a Tabela FIPE pela Placa</h2>
                 <p>Consulte a tabela Fipe de qualquer carro pela placa,
                     não precisa do renavam, aceitamos placa Mercosul ou padrão brasileiro</p>
-                <a class="botao-pesquisa" href="#consultar">Pesquisar</a>
+                <a class="botao-pesquisa" href="#consultar">Pesquisar</a>   
             </div>
             <picture>
                 <img class="logo" src="imagens/logo.png" alt="Logo FIPC" title="Logo FIPC">
@@ -53,13 +53,20 @@
                 <label for="caminhaoRadio">Caminhão</label>
             </div>
         
-            <form  id="formSelecaoMarca" style="display:none;">
+            <form id="formSelecaoMarca" style="display:none;">
                 <div class="formulario-consulta">
-                <label for="marcaSelect">Selecione a Marca:</label>
-                <select name="marcaSelect" id="marcaSelect" required></select>
+                  <label for="marcaSelect">Selecione a Marca:</label>
+                  <select name="marcaSelect" id="marcaSelect" required></select>
+                
+                  <label for="modeloSelect">Selecione o Modelo:</label>
+                  <select name="modeloSelect" id="modeloSelect" required></select>
+
+                  <label for="anoSelect">Selecione o Ano:</label>
+                  <select name="anoSelect" id="anoSelect" required></select>
                 </div>
 
-            </form>
+                <button type="button" id="buttonTeste"> TESTE </button>
+              </form>
         </section>
         <section  class="terceira-secao">
             <h2 class="titulo-decoracao-branca">Tenha o histórico de consultas</h2>
