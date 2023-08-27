@@ -24,7 +24,7 @@
                 <h2>Pesquise a Tabela FIPE pela Placa</h2>
                 <p>Consulte a tabela Fipe de qualquer carro pela placa,
                     não precisa do renavam, aceitamos placa Mercosul ou padrão brasileiro</p>
-                <a class="botao-pesquisa" href="#consultar">Pesquisar</a>   
+                <a class="botao-pesquisa" href="#sectionConsulta">Pesquisar</a>   
             </div>
             <picture>
                 <img class="logo" src="imagens/logo.png" alt="Logo FIPC" title="Logo FIPC">
@@ -40,20 +40,20 @@
                 <li><i class="fa-solid fa-star"></i> Acompanhe o valor do seu carro</li>
             </ul>
         </section>
-        <section id="consultar" class="consulta">
+        <section id="sectionConsulta" class="section-consulta">
             <h2 class="titulo-decoracao-escura">Consultar Tabela FIPE</h2>
             <div class="opcoes-selecao">
                 <input type="radio" id="carroRadio" name="tipoVeiculo" value="carros">
-                <label for="carroRadio">Carro</label>
+                <label for="carroRadio">Carros</label>
             
                 <input type="radio" id="motoRadio" name="tipoVeiculo" value="motos">
-                <label for="motoRadio">Moto</label>
+                <label for="motoRadio">Motos</label>
             
                 <input type="radio" id="caminhaoRadio" name="tipoVeiculo" value="caminhoes">
-                <label for="caminhaoRadio">Caminhão</label>
+                <label for="caminhaoRadio">Caminhões</label>
             </div>
         
-            <form id="formSelecaoMarca" style="display:none;">
+            <form id="formConsultaFipe" style="display:none;">
                 <div class="formulario-consulta">
                   <label for="marcaSelect">Selecione a Marca:</label>
                   <select name="marcaSelect" id="marcaSelect" required></select>
@@ -65,8 +65,11 @@
                   <select name="anoSelect" id="anoSelect" required></select>
                 </div>
 
-                <button type="button" id="buttonTeste"> TESTE </button>
+                <button type="button" id="buttonConsultar"> Consultar </button>
               </form>
+        </section>
+        <section id="resultadoConsulta">
+            <p>teste</p>
         </section>
         <section  class="terceira-secao">
             <h2 class="titulo-decoracao-branca">Tenha o histórico de consultas</h2>
