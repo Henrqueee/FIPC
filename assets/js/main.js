@@ -19,12 +19,39 @@ function consultarMarcas(categoria) {
 
   return fetch(apiUrl)
       .then(response => response.json())
-      .then( data => {
-        console.log(data)
-      })
       .catch(error => {
           console.error(`Ocorreu um erro ao consultar as marcas de ${categoria}:`, error);
       });
 }
 
-consultarMarcas('motos')
+// Captura o tipo de veículo desejado através dos radios e preenche os select's
+const radioInputs = document.querySelectorAll('input[name="tipoVeiculo"]');
+let selectedTipoVeiculo = null;
+
+radioInputs.forEach(radio => {
+    radio.addEventListener('change', () => {
+        if (radio.checked) {
+            selectedTipoVeiculo = radio.value;
+            consultarMarcas(selectedTipoVeiculo).then(dataVeiculos => {
+              console.log(dataVeiculos);
+              preencherSelect(marcaSelect, dataVeiculos, 'codigo', 'nome') 
+            })
+        }
+    });
+});
+
+// Função para preencher os select
+const marcaSelect = document.getElementById('marcaSelect');
+const modeloSelect = document.getElementById('modeloSelect');
+const anoSelect = document.getElementById('anoSelect');
+const buttonConsultar = document.getElementById('buttonConsultar');
+
+function preencherSelect(element, data, valueKey, textKey) {
+    element.innerHTML = '';
+    data.forEach(item => {
+        const option = document.createElement('option');
+        option.value = item[valueKey];
+        option.textContent = item[textKey];
+        element.appendChild(option);
+    });
+}
