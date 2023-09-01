@@ -33,15 +33,15 @@ async function consultarModelos(categoria) {
     let apiUrl;
 
     switch (categoria) {
-        case 
-        'carros':
+        case
+            'carros':
             apiUrl = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${selectedMarca}/modelos`;
             break;
         case 'motos':
             apiUrl = `https://parallelum.com.br/fipe/api/v1/motos/marcas/${selectedMarca}/modelos`;
             break;
-        case 
-        'caminhoes':
+        case
+            'caminhoes':
             apiUrl = `https://parallelum.com.br/fipe/api/v1/caminhoes/marcas/${selectedMarca}/modelos`;
             break;
         default:
@@ -92,7 +92,7 @@ async function consultarAnos(categoria) {
 const marcaSelect = document.getElementById('marcaSelect');
 const modeloSelect = document.getElementById('modeloSelect');
 const anoSelect = document.getElementById('anoSelect');
-const buttonConsultar = document.getElementById('buttonConsultar');
+const botaoConsultar = document.getElementById('buttonConsultar');
 const radioInputs = document.querySelectorAll('input[name="tipoVeiculo"]');
 
 // Captura o tipo de veículo desejado através dos radios e preenche os select's
@@ -151,7 +151,7 @@ function preencherSelect(element, data, valueKey, textKey) {
 
 // Função para limpar as opções de um select
 function limparSelect(element) {
-    element.innerHTML = '';let selectedTipoVeiculo = '';
+    element.innerHTML = ''; let selectedTipoVeiculo = '';
     selectedModelo = '';
     selectedAno = '';
     selectedMarca = '';
@@ -176,17 +176,48 @@ async function ConsultarTabelaFipe(categoria) {
     try {
         const response = await fetch(apiUrl);
         const data = await response.json();
-        console.log(data)
+        resultadoFipe = data
+        preencherDetalhesConsulta(resultadoFipe);
+        abrirModal();
         return data;
     } catch (error) {
         console.error(`Ocorreu um erro ao consultar as marcas de ${categoria}:`, error);
         throw error;
     }
-    
+
 };
 
-buttonConsultar.addEventListener('click', function () {
+botaoConsultar.addEventListener('click', function () {
     ConsultarTabelaFipe(selectedTipoVeiculo)
 });
 
+
+// Modal onde exibi o resultado da consulta 
+const modal = document.getElementById("modalFipe");
+const botaoFechar = document.getElementById("fechar");
+function abrirModal() {
+    modal.style.display = "block";
+}
+function fecharModal() {
+    modal.style.display = "none";
+}
+let botaoFecharModal = document.getElementById('fecharModal');
+botaoFecharModal.addEventListener('click', function () {
+    fecharModal()
+})
+
+// Exibir os dados dentro do modal
+
+function preencherDetalhesConsulta(dados) {
+    modalInfo.innerHTML = "";
+
+    for (const prop in dados) {
+        const detalhe = document.createElement("p");
+        detalhe.classList.add("detalhe-item");
+        const label = prop.replace(/([A-Z])/g, ' $1');
+        const labelText = label.charAt(0).toUpperCase() + label.slice(1); // Capitaliza o primeiro caractere
+        detalhe.innerHTML = `<strong class="valor-label">${labelText}:</strong> <span class="valor">${dados[prop]}</span>`;
+        modalInfo.appendChild(detalhe);
+    }
+}
 

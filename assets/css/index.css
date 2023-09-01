@@ -25,44 +25,13 @@ html {
 
 /* Estilos adicionais vão abaixo */
 
-header {
-    display: flex;
-    justify-content: space-around;
-    padding: 20px;
-    background-color: #23272A;
-}
-
-.lista-links {
-    display: flex;
-}
-
 main {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-}
+    background-color: #23272A;
 
-.titulo {
-    color: #ffff;
-    text-decoration: underline;
-}
-
-.link-login {
-    display: inline-block;
-    font-size: 25px;
-    padding: 10px 20px;
-    color: #fff;
-    text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    border: 1px solid #fff;
-    margin: 0 7px
-}
-
-
-.link-login:hover {
-    color: #5865f2;
-    border-color: #5865f2;
 }
 
 /* Primeira seção página inicial */
@@ -77,34 +46,34 @@ main {
     position: relative;
 }
 
-.cartao-registro {
-    color: #ffff;
+.card-inicial {
+    color: #FFFFFF;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
 }
 
-.cartao-registro h2 {
+.card-inicial h2 {
     font-size: 56px;
     padding-bottom: 25px;
 }
 
-.cartao-registro p {
+.card-inicial p {
     padding-bottom: 25px;
 }
 
 .logo {
-    width: 100%; /* Define a largura da imagem como 100% */
-    height: auto; /* Mantém a proporção da imagem */
-    display: block; /* Remove espaços indesejados abaixo da imagem */
-  }
+    width: 100%;
+    height: auto;
+    display: block;
+}
 
 .botao-pesquisa {
     display: flex;
     width: 140px;
     height: 40px;
-    background-color: #5865f2;
+    background-color: #5865F2;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -113,35 +82,40 @@ main {
     justify-content: center;
     text-decoration: none;
     transition: background-color 0.3s ease;
-    color: #fff;
+    color: #FFFFFF;
 }
 
 .botao-pesquisa:hover {
-    background-color: #fff;
-    color: #5865f2;
+    background-color: #FFFFFF;
+    color: #5865F2;
     width: 170px;
 }
 
 /* Segunda seção página inicial */
 
 .segunda-secao {
-    max-width: 1260px;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
     height: 400px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: #FFFFFF;
+    margin: 80px;
 }
 
 .titulo-decoracao-escura {
     font-size: 40px;
     color: #23272A;
+    padding-bottom: 20px;
 }
 
 .lista-vantagens {
-    padding: 15px 0;
+    padding: 15px auto;
     font-size: 20px;
+    text-align: center;
 }
-
 
 /* Terceira seção página inicial */
 
@@ -153,11 +127,11 @@ main {
     background-color: #23272A;
     width: 100%;
     height: 400px;
-    color: #fff;
+    color: #FFFFFF;
 }
 
 .titulo-decoracao-branca {
-    color: #fff;
+    color: #FFFFFF;
     font-size: 40px;
     padding-bottom: 15px;
 }
@@ -165,7 +139,7 @@ main {
 footer {
     background-color: #23272A;
     padding-bottom: 20px;
-    color: #fff;
+    color: #FFFFFF;
     text-align: center;
 }
 
@@ -176,30 +150,30 @@ footer {
     gap: 20px;
     align-items: center;
     margin-bottom: 20px;
-  }
+}
 
-  .opcoes-selecao input[type="radio"] {
+.opcoes-selecao input[type="radio"] {
     display: none;
-  }
+}
 
-  .opcoes-selecao label {
+.opcoes-selecao label {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #f0f0f0;
-    border: 1px solid #ccc;
+    background-color: #F0F0F0;
+    border: 1px solid #CCC;
     border-radius: 4px;
     cursor: pointer;
     font-size: 14px;
-  }
+}
 
-  .opcoes-selecao input[type="radio"]:checked + label {
-    background-color: #5865f2;
-    color: white;
-  }
+.opcoes-selecao input[type="radio"]:checked+label {
+    background-color: #5865F2;
+    color: #FFFFFF;
+}
 
-  .opcoes-selecao label:hover {
-    background-color: #ddd;
-  }
+.opcoes-selecao label:hover {
+    background-color: #DDD;
+}
 
 .formulario-consulta {
     display: flex;
@@ -210,33 +184,32 @@ footer {
 
 .formulario-consulta label {
     font-weight: bold;
-  }
+}
 
-  .formulario-consulta select {
+.formulario-consulta select {
     width: 100%;
     padding: 8px;
-    border: 1px solid #ccc;
+    border: 1px solid #CCC;
     border-radius: 4px;
     background-color: white;
     font-size: 14px;
-  }
+}
 
-  #buttonConsultar {
+#buttonConsultar {
     padding: 10px 20px;
-    background-color: #5865f2;
+    background-color: #5865F2;
     color: white;
     border: none;
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
-  }
+}
 
-  #buttonConsultar:hover {
+#buttonConsultar:hover {
     background-color: white;
-    color: #5865f2;
-    border: solid 1px #5865f2;
-  }
-
+    color: #5865F2;
+    border: solid 1px #5865F2;
+}
 
 .section-consulta {
     display: flex;
@@ -245,24 +218,112 @@ footer {
     text-align: center;
     align-items: center;
     padding: 40px 20px;
+    background-color: white;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
 }
 
-
-/* Resultado consulta Fipe */
-
-#resultadoConsulta {
+/* Estilos para o modal */
+.modal {
     display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
 }
 
+.modal-conteudo {
+    background-color: #FFFFFF;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 70%;
+    max-width: 600px;
+    position: relative;
+    border: 1px solid white;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    border-radius: 10px; 
+}
 
+.fechar {
+    position: absolute;
+    top: 0;
+    right: 10px;
+    font-size: 24px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.resultado-fipe {
+    color: #23272A;
+}
+
+.detalhe-item {
+    margin: 10px 0;
+    font-size: 16px;
+}
+
+.valor-label {
+    color: #23272A;
+}
+
+.valor {
+    color: #23272A;
+}
+
+.error-modal {
+    color: #23272A;
+}
 
 /* Media Query */
 
 @media (max-width: 768px) {
-    .logo {
-      width: 70%; /* Define a largura da imagem como 50% em dispositivos com largura máxima de 768px */
-      display: block; /* Remove espaços indesejados abaixo da imagem */
-      margin: 0 auto;
+    main {
+        justify-content: center;
+        text-align: center;
+        padding: 0 auto;
     }
-  }
-  
+
+    .primeira-secao {
+        background-color: #23272A;
+        display: flex;
+        justify-content: space-around;
+        width: 100%;
+        height: 600px;
+        flex-wrap: wrap;
+        position: relative;
+    }
+
+    .card-inicial {
+        color: #FFFFFF;
+        padding-left:
+    }
+
+    .card-inicial h2 {
+        font-size: 56px;
+        padding-bottom: 25px;
+    }
+
+    .card-inicial p {
+        padding-bottom: 25px;
+    }
+
+    .logo {
+        width: 70%;
+        display: block;
+        margin: 0 auto;
+    }
+
+    .segunda-secao {
+        max-width: 1260px;
+        height: auto;
+        padding-top: 25px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center
+    }
+}
