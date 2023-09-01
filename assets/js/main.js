@@ -158,6 +158,10 @@ function limparSelect(element) {
 };
 
 async function ConsultarTabelaFipe(categoria) {
+    if (!selectedTipoVeiculo || !selectedMarca || !selectedModelo || !selectedAno) {
+        alert('Preencha todos os campos solicitados')
+    }
+    let apiUrl = '';
     switch (categoria) {
         case 'carros':
             apiUrl = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${selectedMarca}/modelos/${selectedModelo}/anos/${selectedAno}`;
@@ -177,7 +181,7 @@ async function ConsultarTabelaFipe(categoria) {
         const response = await fetch(apiUrl);
         const data = await response.json();
         resultadoFipe = data
-        preencherDetalhesConsulta(resultadoFipe);
+        preencherResultadoConsulta(resultadoFipe);
         abrirModal();
         return data;
     } catch (error) {
@@ -208,7 +212,7 @@ botaoFecharModal.addEventListener('click', function () {
 
 // Exibir os dados dentro do modal
 
-function preencherDetalhesConsulta(dados) {
+function preencherResultadoConsulta(dados) {
     modalInfo.innerHTML = "";
 
     for (const prop in dados) {
@@ -220,4 +224,18 @@ function preencherDetalhesConsulta(dados) {
         modalInfo.appendChild(detalhe);
     }
 }
+
+function preencherErrorConsulta(dados) {
+    modalInfo.innerHTML = "";
+
+    for (const prop in dados) {
+        const detalhe = document.createElement("p");
+        detalhe.classList.add("detalhe-item");
+        const label = prop.replace(/([A-Z])/g, ' $1');
+        const labelText = label.charAt(0).toUpperCase() + label.slice(1); // Capitaliza o primeiro caractere
+        detalhe.innerHTML = `<strong class="valor-label">${labelText}:</strong> <span class="valor">${dados[prop]}</span>`;
+        modalInfo.appendChild(detalhe);
+    }
+}
+
 

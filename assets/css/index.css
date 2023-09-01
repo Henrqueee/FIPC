@@ -138,7 +138,7 @@ main {
 
 footer {
     background-color: #23272A;
-    padding-bottom: 20px;
+    padding: 20px 0;
     color: #FFFFFF;
     text-align: center;
 }
@@ -149,7 +149,7 @@ footer {
     display: flex;
     gap: 20px;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
 }
 
 .opcoes-selecao input[type="radio"] {
@@ -188,6 +188,7 @@ footer {
 
 .formulario-consulta select {
     width: 100%;
+    margin-bottom: 30px;
     padding: 8px;
     border: 1px solid #CCC;
     border-radius: 4px;
@@ -212,12 +213,14 @@ footer {
 }
 
 .section-consulta {
+    min-width: 25%;
+    min-height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     text-align: center;
     align-items: center;
-    padding: 40px 20px;
+    padding: 0 20px;
     background-color: white;
     border: 1px solid white;
     box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
@@ -281,7 +284,7 @@ footer {
 
 /* Media Query */
 
-@media (max-width: 768px) {
+@media (max-width: 920px) {
     main {
         justify-content: center;
         text-align: center;
@@ -291,7 +294,8 @@ footer {
     .primeira-secao {
         background-color: #23272A;
         display: flex;
-        justify-content: space-around;
+        justify-content: center;
+        text-align: center;
         width: 100%;
         height: 600px;
         flex-wrap: wrap;
