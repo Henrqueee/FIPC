@@ -54,7 +54,7 @@ main {
     justify-content: center;
 }
 
-.card-inicial h2 {
+.card-inicial h1 {
     font-size: 56px;
     padding-bottom: 25px;
 }
@@ -71,13 +71,13 @@ main {
 
 .botao-pesquisa {
     display: flex;
-    width: 140px;
-    height: 40px;
+    width: 180px;
+    height: 50px;
     background-color: #5865F2;
     border: none;
     border-radius: 50px;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 22px;
     align-items: center;
     justify-content: center;
     text-decoration: none;
@@ -88,7 +88,7 @@ main {
 .botao-pesquisa:hover {
     background-color: #FFFFFF;
     color: #5865F2;
-    width: 170px;
+    width: 190px;
 }
 
 /* Segunda seção página inicial */
@@ -197,6 +197,8 @@ footer {
 }
 
 #buttonConsultar {
+     width: 180px;
+    height: 50px;
     padding: 10px 20px;
     background-color: #5865F2;
     color: white;
@@ -261,6 +263,9 @@ footer {
     cursor: pointer;
 }
 
+.fechar:hover {
+    width: 20px;
+}
 .resultado-fipe {
     color: #23272A;
 }
@@ -304,10 +309,9 @@ footer {
 
     .card-inicial {
         color: #FFFFFF;
-        padding-left:
     }
 
-    .card-inicial h2 {
+    .card-inicial h1 {
         font-size: 56px;
         padding-bottom: 25px;
     }

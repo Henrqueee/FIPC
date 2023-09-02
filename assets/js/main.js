@@ -1,92 +1,29 @@
 // Consulta as marcas em diferentes categorias (carros, motos, caminhões)
 async function consultarMarcas(categoria) {
-    let apiUrl;
+    let apiUrl = `https://parallelum.com.br/fipe/api/v1/${categoria}/marcas`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    return data;
 
-    switch (categoria) {
-        case 'carros':
-            apiUrl = 'https://parallelum.com.br/fipe/api/v1/carros/marcas';
-            break;
-        case 'motos':
-            apiUrl = 'https://parallelum.com.br/fipe/api/v1/motos/marcas';
-            break;
-        case 'caminhoes':
-            apiUrl = 'https://parallelum.com.br/fipe/api/v1/caminhoes/marcas';
-            break;
-        default:
-            console.error('Categoria inválida:', categoria);
-            return Promise.reject('Categoria inválida');
-    }
-
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(`Ocorreu um erro ao consultar as marcas de ${categoria}:`, error);
-        throw error;
-    }
 };
 
 // // Consulta os modelos em diferentes categorias (carros, motos, caminhões)
 
 async function consultarModelos(categoria) {
-    let apiUrl;
+    let apiUrl = `https://parallelum.com.br/fipe/api/v1/${categoria}/marcas/${selectedMarca}/modelos`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    return data;
 
-    switch (categoria) {
-        case
-            'carros':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${selectedMarca}/modelos`;
-            break;
-        case 'motos':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/motos/marcas/${selectedMarca}/modelos`;
-            break;
-        case
-            'caminhoes':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/caminhoes/marcas/${selectedMarca}/modelos`;
-            break;
-        default:
-            console.error('Categoria inválida:', categoria);
-            return Promise.reject('Categoria inválida');
-    }
-
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(`Ocorreu um erro ao consultar as marcas de ${categoria}:`, error);
-        throw error;
-    }
 };
 
 // // Consulta os anos em diferentes categorias (carros, motos, caminhões)
 
 async function consultarAnos(categoria) {
-    let apiUrl;
-
-    switch (categoria) {
-        case 'carros':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${selectedMarca}/modelos/${selectedModelo}/anos`;
-            break;
-        case 'motos':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/motos/marcas/${selectedMarca}/modelos/${selectedModelo}/anos`;
-            break;
-        case 'caminhoes':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/caminhoes/marcas/${selectedMarca}/modelos/${selectedModelo}/anos`;
-            break;
-        default:
-            console.error('Categoria inválida:', categoria);
-            return Promise.reject('Categoria inválida');
-    }
-
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        return data;
-    } catch (error) {
-        console.error(`Ocorreu um erro ao consultar as marcas de ${categoria}:`, error);
-        throw error;
-    }
+    let apiUrl = `https://parallelum.com.br/fipe/api/v1/${categoria}/marcas/${selectedMarca}/modelos/${selectedModelo}/anos`;
+    const response = await fetch(apiUrl);
+    const data = await response.json();
+    return data;
 };
 
 const marcaSelect = document.getElementById('marcaSelect');
@@ -95,22 +32,19 @@ const anoSelect = document.getElementById('anoSelect');
 const botaoConsultar = document.getElementById('buttonConsultar');
 const radioInputs = document.querySelectorAll('input[name="tipoVeiculo"]');
 
-// Captura o tipo de veículo desejado através dos radios e preenche os select's
 let selectedTipoVeiculo = '';
 let selectedMarca = '';
 let selectedModelo = '';
 let selectedAno = '';
 let resultadoFipe = '';
 
+// Captura o tipo de veículo desejado através dos radios e preenche os select's
 radioInputs.forEach(radio => {
     radio.addEventListener('change', async () => {
         if (radio.checked) {
             selectedTipoVeiculo = radio.value;
             try {
                 const dataVeiculos = await consultarMarcas(selectedTipoVeiculo);
-                limparSelect(marcaSelect)
-                limparSelect(modeloSelect);
-                limparSelect(anoSelect);
                 preencherSelect(marcaSelect, dataVeiculos, 'codigo', 'nome');
             } catch (error) {
                 console.error(`Ocorreu um erro ao consultar as marcas:`, error);
@@ -141,6 +75,10 @@ anoSelect.addEventListener('change', async () => {
 // Função para preencher os select's
 function preencherSelect(element, data, valueKey, textKey) {
     element.innerHTML = '';
+    const selecioneOption = document.createElement('option');
+    selecioneOption.value = '';
+    selecioneOption.textContent = 'Selecione uma marca';
+    element.appendChild(selecioneOption);
     data.forEach(item => {
         const option = document.createElement('option');
         option.value = item[valueKey];
@@ -149,47 +87,24 @@ function preencherSelect(element, data, valueKey, textKey) {
     });
 };
 
-// Função para limpar as opções de um select
-function limparSelect(element) {
-    element.innerHTML = ''; let selectedTipoVeiculo = '';
-    selectedModelo = '';
-    selectedAno = '';
-    selectedMarca = '';
-};
-
 async function ConsultarTabelaFipe(categoria) {
-    if (!selectedTipoVeiculo || !selectedMarca || !selectedModelo || !selectedAno) {
-        alert('Preencha todos os campos solicitados')
-    }
-    let apiUrl = '';
-    switch (categoria) {
-        case 'carros':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/carros/marcas/${selectedMarca}/modelos/${selectedModelo}/anos/${selectedAno}`;
-            break;
-        case 'motos':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/motos/marcas/${selectedMarca}/modelos/${selectedModelo}/anos/${selectedAno}`;
-            break;
-        case 'caminhoes':
-            apiUrl = `https://parallelum.com.br/fipe/api/v1/caminhoes/marcas/${selectedMarca}/modelos/${selectedModelo}/anos/${selectedAno}`;
-            break;
-        default:
-            console.error('Categoria inválida:', categoria);
-            return Promise.reject('Categoria inválida');
-    }
-
+    let apiUrl = `https://parallelum.com.br/fipe/api/v1/${categoria}/marcas/${selectedMarca}/modelos/${selectedModelo}/anos/${selectedAno}`;
+    
     try {
         const response = await fetch(apiUrl);
-        const data = await response.json();
-        resultadoFipe = data
-        preencherResultadoConsulta(resultadoFipe);
-        abrirModal();
-        return data;
+        if (response.ok) {
+            const data = await response.json();
+            resultadoFipe = data;
+            preencherResultadoConsulta(resultadoFipe);
+            abrirModal();
+            return data;
+        } else {
+            alert('Certifique-se de preencher todos os dados solicitados');
+        }
     } catch (error) {
-        console.error(`Ocorreu um erro ao consultar as marcas de ${categoria}:`, error);
-        throw error;
+        alert(`Erro ao fazer a requisição à API: ${error}`);
     }
-
-};
+}
 
 botaoConsultar.addEventListener('click', function () {
     ConsultarTabelaFipe(selectedTipoVeiculo)

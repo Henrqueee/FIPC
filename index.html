@@ -15,9 +15,9 @@
     <main>
         <section class="primeira-secao">
             <div class="card-inicial">
-                <h2>Pesquise a Tabela FIPE pela Placa</h2>
-                <p>Consulte a tabela Fipe de qualquer carro pela placa,
-                    não precisa do renavam, aceitamos placa Mercosul ou padrão brasileiro</p>
+                <h1>Consulte a Tabela FIPE</h1>
+                <p>Consulte a tabela Fipe de qualquer,
+                    não precisa do renavam.</p>
                 <a class="botao-pesquisa" href="#sectionConsulta">Pesquisar</a>
             </div>
             <picture>
@@ -25,7 +25,7 @@
             </picture>
         </section>
         <section class="segunda-secao">
-            <h2 class="titulo-decoracao-escura">Aproveite as consultas das Tabela FIPE</h2>
+            <h2 class="titulo-decoracao-escura">Aproveite as consultas da Tabela FIPE</h2>
                 <ul class="lista-vantagens">
                     <li><i class="fa-solid fa-star"></i> Consultas gratuitas, sem cadastro, sem limite de consultas</li>
                     <li><i class="fa-solid fa-star"></i> Acesso online, sem instalar nada, basta acessar o site</li>
@@ -50,16 +50,25 @@
             <form id="formConsultaFipe">
                 <div class="formulario-consulta">
                     <label for="marcaSelect">Selecione a Marca:</label>
-                    <select name="marcaSelect" id="marcaSelect" required></select>
-
+                    <select name="marcaSelect" id="marcaSelect" required>
+                        <option value="">Selecione uma marca</option>
+                        <!-- Aqui você pode adicionar as opções de marca dinamicamente, se desejar -->
+                    </select>
+            
                     <label for="modeloSelect">Selecione o Modelo:</label>
-                    <select name="modeloSelect" id="modeloSelect" required></select>
-
+                    <select name="modeloSelect" id="modeloSelect" required>
+                        <option value="">Selecione um modelo</option>
+                        <!-- Aqui você pode adicionar as opções de modelo dinamicamente, se desejar -->
+                    </select>
+            
                     <label for="anoSelect">Selecione o Ano:</label>
-                    <select name="anoSelect" id="anoSelect" required></select>
+                    <select name="anoSelect" id="anoSelect" required>
+                        <option value="">Selecione um ano</option>
+                        <!-- Aqui você pode adicionar as opções de ano dinamicamente, se desejar -->
+                    </select>
                 </div>
-
-                <button type="button" id="buttonConsultar"> Consultar </button>
+            
+                <button type="button" id="buttonConsultar">Consultar</button>
             </form>
 
             <div id="modalFipe" class="modal">
@@ -74,9 +83,8 @@
             
         </section>
         <section class="terceira-secao">
-            <h2 class="titulo-decoracao-branca">Tenha o histórico de consultas</h2>
-            <p>Acompanhe o histórico de consultas,
-                veja o valor do carro que você comprou, ou que você quer comprar.</p>
+            <h2 class="titulo-decoracao-branca">Acompanhe o valor do seu carro</h2>
+            <p>Veja o valor do carro que você comprou, ou que você quer comprar.</p>
         </section>
 
     </main>
