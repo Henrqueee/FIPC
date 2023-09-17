@@ -45,7 +45,7 @@ radioInputs.forEach(radio => {
             selectedTipoVeiculo = radio.value;
             try {
                 const dataVeiculos = await consultarMarcas(selectedTipoVeiculo);
-                preencherSelect(marcaSelect, dataVeiculos, 'codigo', 'nome');
+                preencherSelect(marcaSelect, dataVeiculos, 'codigo', 'nome', 'Selecione uma marca');
             } catch (error) {
                 console.error(`Ocorreu um erro ao consultar as marcas:`, error);
             }
@@ -57,14 +57,14 @@ radioInputs.forEach(radio => {
 marcaSelect.addEventListener('change', async () => {
     selectedMarca = marcaSelect.value;
     const modelosData = await consultarModelos(selectedTipoVeiculo);
-    preencherSelect(modeloSelect, modelosData.modelos, 'codigo', 'nome');
+    preencherSelect(modeloSelect, modelosData.modelos, 'codigo', 'nome', 'Selecione um modelo');
 });
 
 //Função para capturar modelo escolhido e disponibilizar os anos 
 modeloSelect.addEventListener('change', async () => {
     selectedModelo = modeloSelect.value;
     const anosData = await consultarAnos(selectedTipoVeiculo);
-    preencherSelect(anoSelect, anosData, 'codigo', 'nome');
+    preencherSelect(anoSelect, anosData, 'codigo', 'nome', 'Selecione um ano');
 });
 
 
@@ -73,16 +73,17 @@ anoSelect.addEventListener('change', async () => {
 });
 
 // Função para preencher os select's
-function preencherSelect(element, data, valueKey, textKey) {
+function preencherSelect(element, data, valueKey, textKey, textOption) {
     element.innerHTML = '';
     const selecioneOption = document.createElement('option');
     selecioneOption.value = '';
-    selecioneOption.textContent = 'Selecione uma marca';
+    selecioneOption.textContent = textOption;
     element.appendChild(selecioneOption);
     data.forEach(item => {
         const option = document.createElement('option');
         option.value = item[valueKey];
         option.textContent = item[textKey];
+        option.classList.add('select-option');
         element.appendChild(option);
     });
 };

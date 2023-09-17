@@ -50,21 +50,18 @@
             <form id="formConsultaFipe">
                 <div class="formulario-consulta">
                     <label for="marcaSelect">Selecione a Marca:</label>
-                    <select name="marcaSelect" id="marcaSelect" required>
+                    <select class="select" name="marcaSelect" id="marcaSelect" required>
                         <option value="">Selecione uma marca</option>
-                        <!-- Aqui você pode adicionar as opções de marca dinamicamente, se desejar -->
                     </select>
             
                     <label for="modeloSelect">Selecione o Modelo:</label>
-                    <select name="modeloSelect" id="modeloSelect" required>
+                    <select class="select" name="modeloSelect" id="modeloSelect" required>
                         <option value="">Selecione um modelo</option>
-                        <!-- Aqui você pode adicionar as opções de modelo dinamicamente, se desejar -->
                     </select>
             
                     <label for="anoSelect">Selecione o Ano:</label>
-                    <select name="anoSelect" id="anoSelect" required>
-                        <option value="">Selecione um ano</option>
-                        <!-- Aqui você pode adicionar as opções de ano dinamicamente, se desejar -->
+                    <select class="select" name="anoSelect" id="anoSelect" required>
+                        <option value="">Selecione um ano</option>  
                     </select>
                 </div>
             
@@ -72,13 +69,9 @@
             </form>
 
             <div id="modalFipe" class="modal">
-                <div class="posicionar-modal">
-                    <div class="modal-conteudo">
-                        <h2 class="resultado-fipe">Resultado FIPC</h2>
-                        <span id="fecharModal" class="fechar"><i class="fa-solid fa-x"></i></span>
-                        <pre id="modalInfo"></pre>
-                    </div>
-                </div>
+                <span id="fecharModal" class="fechar"><i class="fa-solid fa-x"></i></span>
+                <h2>Resultado FIPC</h2>   
+                <pre id="modalInfo"></pre>
             </div>
             
         </section>
